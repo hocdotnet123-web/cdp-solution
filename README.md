@@ -10,3 +10,4 @@ Business specification and strict **Database-per-Service** system architecture f
 - **[cdp_strict_microservice_db_architecture.md](./cdp_strict_microservice_db_architecture.md)** — Technical Architecture & Infrastructure Sizing (`1-to-1` exclusive `PostgreSQL` & `Redis` ownership per microservice, Kafka Log-Compacted Config Topics, Event-Carried State Transfer, and HA sizing).
 - **[realtime_cdp_strict_architecture.excalidraw](./realtime_cdp_strict_architecture.excalidraw)** — Editable Excalidraw architecture source diagram.
 - **[CDP-Arch.png](./CDP-Arch.png)** — Exported architecture diagram image.
+- **[AGENTS.md](./AGENTS.md)** — Always-on AI agent engineering, architectural isolation, and hot-path performance guardrails.
