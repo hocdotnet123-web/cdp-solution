@@ -1,0 +1,17 @@
+# Independent Polyrepo Git Repositories (managed separately)
+/cdp-backend/
+/cdp-admin-portal/
+/cdp-web-sdk/
+
+# IDEs & OS
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Local env
+.env
+.env.local
+.env.*.local

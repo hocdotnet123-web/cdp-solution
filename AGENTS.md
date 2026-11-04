@@ -9,6 +9,7 @@ Tradeoff: Bias toward architectural isolation, predictable p95 latency, correctn
 - Push back if a requested change violates hot-path latency SLAs or bounded-context isolation, and propose a safer alternative.
 
 ## 2. Strict Architecture & Data Isolation Invariants (Non-Negotiable)
+- **Polyrepo Codebase Isolation:** Backend, Control Plane Frontend, and Edge SDKs live in strictly separated Git repositories (`cdp-backend`, `cdp-admin-portal`, `cdp-web-sdk`) — never mix Java/Gradle and Node/TypeScript toolchains in the same repository. Synchronize cross-repo payloads via versioned JSON Schema / HTTP & Kafka contracts.
 - **1-to-1 Database & Redis Ownership:** Never connect two microservices to the same `PostgreSQL` database, `Redis` cluster, or `S3` bucket:
   - `admin-portal-service` owns `admin-postgres` & `S3 (static-bundles)` exclusively.
   - `ingestion-gateway` is 100% stateless (no DB, no Redis).
