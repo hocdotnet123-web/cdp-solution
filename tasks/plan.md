@@ -9,7 +9,7 @@
 
 ## Overview
 
-Greenfield rebuild of the high-throughput **Real-Time CDP & On-Site Execution Engine** (`> 2,000 clicks/s` sustained, `10,000 clicks/s` peak burst, `100,000 CCU`) defined in `docs/lgcns_cdp_expanded_business_spec.md`, `docs/cdp_strict_microservice_db_architecture.md`, and `AGENTS.md`.
+Greenfield rebuild of the high-throughput **Real-Time CDP & On-Site Execution Engine** (`> 2,000 clicks/s` sustained, `10,000 clicks/s` peak burst, `100,000 CCU`) defined in `docs/realtime_cdp_business_spec.md`, `docs/cdp_strict_microservice_db_architecture.md`, and `AGENTS.md`.
 
 **Sprint 0 Goal:** Deliver strictly decoupled **Polyrepo** codebases (`cdp-backend`, `cdp-admin-portal`, `cdp-web-sdk`) backed by 1-to-1 isolated local infrastructure, canonical Kafka + JSON Schema contracts, `< 500 ms` compacted-topic L1 cache hydration, automated ArchUnit/Redis Cluster isolation guardrails, and per-repository green CI pipelines.
 

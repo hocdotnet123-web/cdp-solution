@@ -1,6 +1,6 @@
 # Real-Time CDP & On-Site Execution Engine (Solution Hub)
 
-Architecture governance, business specifications, and Polyrepo workspace hub for a high-throughput **Real-Time Customer Data Platform** (`> 2,000 clicks/s` sustained, `10,000 clicks/s` burst, `100,000 Concurrent Users`), inspired by **LG CNS RealCDP** standards.
+Architecture governance, business specifications, and Polyrepo workspace hub for a high-throughput **Real-Time Customer Data Platform** (`> 2,000 clicks/s` sustained, `10,000 clicks/s` burst, `100,000 Concurrent Users`).
 
 ![Real-Time CDP Architecture](./CDP-Arch.png)
 
@@ -16,7 +16,7 @@ Each runtime boundary lives in its own isolated Git repository with zero toolcha
 
 ## Architecture & Planning Artifacts
 
-- **[docs/lgcns_cdp_expanded_business_spec.md](./docs/lgcns_cdp_expanded_business_spec.md)** — End-to-end Real-Time Processing Business Specification (Edge Ingestion & Consent Gate, Identity Resolution & Session Stitching, Sliding Windows, CEP Timers, Dynamic Segmentation, On-Site Arbitration & Multi-Tab Lua Lock, and `< 250ms` Closed-Loop Reaction).
+- **[docs/realtime_cdp_business_spec.md](./docs/realtime_cdp_business_spec.md)** — End-to-end Real-Time Processing Business Specification (Edge Ingestion & Consent Gate, Identity Resolution & Session Stitching, Sliding Windows, CEP Timers, Dynamic Segmentation, On-Site Arbitration & Multi-Tab Lua Lock, and `< 250ms` Closed-Loop Reaction).
 - **[docs/cdp_strict_microservice_db_architecture.md](./docs/cdp_strict_microservice_db_architecture.md)** — Strict `1-to-1` Database-per-Service Architecture, Kafka Log-Compacted Config Topics, Event-Carried State Transfer, and HA sizing.
 - **[tasks/plan.md](./tasks/plan.md)** — Sprint 0 roadmap & Linear issue dependency graph across the Polyrepo boundaries.
 - **[realtime_cdp_strict_architecture.excalidraw](./realtime_cdp_strict_architecture.excalidraw)** — Editable Excalidraw architecture source diagram.

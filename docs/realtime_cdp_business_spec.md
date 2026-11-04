@@ -1,5 +1,5 @@
 # Business Specification: Real-Time CDP & On-Site Execution Engine
-*(Tập trung 100% vào Real-Time Processing — Mở rộng từ `BBB.excalidraw` theo chuẩn lõi LG CNS RealCDP)*
+*(Tập trung 100% vào Real-Time Stream Processing & On-Site Personalization ở độ trễ mili-giây)*
 
 > [!IMPORTANT]
 > **System Scope:** Loại bỏ hoàn toàn phần tích hợp AI và các Outbound Channels. Hệ thống tập trung chuyên sâu vào **Real-Time Stream Processing** ở độ trễ mili-giây: từ **Edge Ingestion** → **Session Stitching** → tính toán **Sliding Window Features & CEP** → đánh giá **Dynamic Segmentation** → **Campaign Arbitration & State Machine** cho On-Site UI (Popup, Sticky Bar, Inline Banner, Micro-Survey) → khép kín **Closed-Loop Reaction**.
@@ -116,7 +116,7 @@ flowchart TB
 ---
 
 ### Module 2: Real-Time Identity Resolution & Session Stitching
-*Hiện thực hóa năng lực Single Customer View (SCV) của LG CNS RealCDP ngay trên luồng streaming.*
+*Hiện thực hóa năng lực Single Customer View (SCV) hợp nhất ngay trên luồng streaming.*
 
 - **High-Speed `master_profile_id` Lookup:**
   - Mọi event đi qua `Identity Resolution Service` đều được resolve từ các định danh thành phần (`cookie_id`, `device_id`, `user_id`, `phone_hash`, `email_hash`) về một khóa gốc duy nhất là **`master_profile_id`** (lookup trên `Redis` ID Cache, fallback xuống `PostgreSQL` Identity Graph khi cache miss).
@@ -133,7 +133,7 @@ flowchart TB
 ---
 
 ### Module 3: Streaming Customer Features & Complex Event Processing (CEP)
-*Hiện thực hóa tính năng No-Code `Customer Feature` của LG CNS RealCDP ở chế độ Real-Time.*
+*Hiện thực hóa tính năng No-Code `Customer Feature` ở chế độ Real-Time.*
 
 Thay vì hardcode logic trong `RealtimeService`, Marketer định nghĩa các **Streaming Features** trên `Portal Admin` để engine tự động tính toán liên tục trên luồng sự kiện:
 
